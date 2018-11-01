@@ -116,6 +116,18 @@
 
 - **Method**: a collection of statements that are grouped together to perform an operation
 - **Method signature**: combination of the method name and the parameter list
+
+  ```java
+  public int max(int a, int b)
+  //         <--------------->
+  //              method
+  //             signature
+  ```
+
+  These aren't part of the method signature:
+  - `public` = access modifier
+  - `int` = return type
+
 - **Parameters**: variables defined in the method header; also refers to the *passed-in* arguments within the method body
 - **Arguments**: the actual values passed to a method when invoking it
 
@@ -278,18 +290,20 @@
 
 ### Class Abstraction and Encapsulation
 
-- **Class abstraction**: separating class implementation from the use of the clas
+- **Class abstraction**: separating class implementation from the use of the class
   - The creator of the class provides a description of the class and lets the user know *how* the class can be used
   - The user of the class does not need to know how the class is implemented (they can treat it as a black box)
-- **Class encapsulation**: the details of implementation are hidden from the user
+- **Class encapsulation**: wrapping variables and methods together as a single unit
 
 ### Data Field Encapsulation
 
+- Providing the right level of access for attributes and methods
+- Abstraction hides **implementation details**; (data) encapsulation hides **data** or **information**
 - `public`: accessible from any other class
 - `private`: accessible only from within the same class
 - `protected`: accessible from any class in the same package or its subclasses
 - Visibility increases: `private` → none → `protected` → `public`
-- If no visibility modifier is used, the default is accessible by any class in the same package
+- If no access modifier is used, the default is accessible by any class in the same package
 - Data fields should be declared as `private` to protect data (preventing them from being directly modified) and to make code easier to maintain
 
 ### Aggregation
@@ -320,7 +334,7 @@ public class Student {
 
 - IS-A relationship between objects that share common properties and behaviours
 - These shared attributes and methods are generalised in a **superclass** that can be shared by other **subclasses**
-- `private` methods cannot be inherited as they are only visible from within the class itself
+- `private` attributes or methods cannot be inherited as they are only visible from within the class itself
 - A superclass' constructor is *not* inherited. It is either invoked implicitly (the no-arg constructor is automatically invoked) or explicitly (using the `super` keyword).
   - If the superclass does not have a no-arg constructor (e.g. if a custom constructor was declared), the subclass must explicitly call `super()` with appropriate arguments or it will not compile
 - **Constructor chaining**: constructing an instance of a class invokes the constructors of all the superclasses along the inheritance chain
@@ -367,8 +381,32 @@ public class Student {
 ### Binding
 
 - Binding refers to matching a method call to a method body
-- Static binding occurs at compile-time
-- Dynamic binding occurs at runtime
+- Static binding occurs at compile-time because static methods within a class already exist at the class level
+
+  ```java
+  public class Dog extends Animal {
+      public static void bark() {
+          System.out.println("woof");
+      }
+  }
+  ```
+
+- Dynamic binding occurs at runtime because objects are only created during runtime
+
+  ```java
+  public class Dog extends Animal {
+      public void bark() {
+          System.out.println("woof");
+      }
+  }
+
+  public class Main {
+      public static void main(String[] args) {
+          Dog dog = new Dog();
+          dog.bark(); // this is bound to the bark() method in Dog at runtime
+      }
+  }
+  ```
 
 ### Equality
 
@@ -458,3 +496,4 @@ public class Student {
 ## Other
 
 - Exceptions are runtime errors that occur while a program is running and the JVM detects an operation that is impossible to carry out
+- An array's length variable is directly exposed (via `.length`) without a getter because it can never be changed after it is initialised, so there is no need for encapsulation. All other length attributes, such as that of a `String`, use getter methods.
