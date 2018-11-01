@@ -8,7 +8,15 @@
 - **Compiler**: a program that translates a high-level language program into a separate machine language program
 - **Interpreter**: a program that both translates and executes instructions written in a high-level programming language
 
+### How Programs Run
+
+1. Fetch next instruction
+2. Decode instruction to determine the operation
+3. Execute the operation
+4. Repeat
+
 ### How Java Works
+
 1. Source code is written in Java
 2. Java compiler (`javac`) compiles source code into Java bytecode (`.class` file) – a middle language between Java and machine language
 3. Java Virtual Machine (JVM) executes the class file
@@ -179,12 +187,14 @@
   double[] myList = {1.9, 2.9, 3.4, 3.5};
   ```
 
-- Using the shorthand notation, you must declare, create, and initialise the array all in one statement. Splitting it would cause a syntax error. For example, the following is wrong:
+- If using the shorthand notation: declaring, creating, and initialising the array must be done all in one statement. Splitting it would cause a syntax error. For example, the following is wrong:
 
   ```java
   double[] myList;
   myList = {1.9, 2.9, 3.4, 3.5};
   ```
+
+  This is because the compiler needs to know the size upfront.
 
 ### Copying Arrays
 
@@ -214,6 +224,14 @@
 - Arrays are a reference type
 - When passing an array to a method, the value of the parameter contains a reference to the array
 - Any changes to the array that occur inside the method body will affect the original array as well
+
+### Array vs. ArrayList
+
+| Array                                           | ArrayList                                                                                        |
+|-------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| Fixed size                                      | Dynamic size                                                                                     |
+| Can store both primitive data types and objects | Can only store objects (need to use wrapper classes for primitives, e.g. `Integer` and `Double`) |
+| `.length`                                       | `.size()`                                                                                        |
 
 
 ## Object-Oriented Programming
@@ -302,7 +320,9 @@ public class Student {
 
 - IS-A relationship between objects that share common properties and behaviours
 - These shared attributes and methods are generalised in a **superclass** that can be shared by other **subclasses**
+- `private` methods cannot be inherited as they are only visible from within the class itself
 - A superclass' constructor is *not* inherited. It is either invoked implicitly (the no-arg constructor is automatically invoked) or explicitly (using the `super` keyword).
+  - If the superclass does not have a no-arg constructor (e.g. if a custom constructor was declared), the subclass must explicitly call `super()` with appropriate arguments or it will not compile
 - **Constructor chaining**: constructing an instance of a class invokes the constructors of all the superclasses along the inheritance chain
 
 ### Overriding and Overloading Methods
@@ -343,6 +363,12 @@ public class Student {
 - This allows methods to be used generically for a wide range of object arguments
 - The particular implementation of the method that is invoked is determined **dynamically**
 - Explicit casting must be used when casting an object from a superclass to a subclass
+
+### Binding
+
+- Binding refers to matching a method call to a method body
+- Static binding occurs at compile-time
+- Dynamic binding occurs at runtime
 
 ### Equality
 
