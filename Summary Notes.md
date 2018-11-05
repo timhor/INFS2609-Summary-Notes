@@ -497,3 +497,17 @@ public class Student {
 
 - Exceptions are runtime errors that occur while a program is running and the JVM detects an operation that is impossible to carry out
 - An array's length variable is directly exposed (via `.length`) without a getter because it can never be changed after it is initialised, so there is no need for encapsulation. All other length attributes, such as that of a `String`, use getter methods.
+- Primitive data types: `boolean`, `byte`, `char`, `short`, `int`, `long`, `float`, `double`
+- Rounding to 2 decimal places:
+
+  ```java
+  double xRounded = Math.round(x * 100) / 100.0;
+  ```
+
+- The default `toString()` method returns class name + hashcode
+- Need to use explicit casting to access methods in a subclass of a polymorphic object:
+
+  ```java
+  Animal dog = new Dog();
+  ((Dog) dog).woof(); // woof() belongs to the Dog subclass
+  ```
