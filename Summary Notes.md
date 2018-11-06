@@ -34,6 +34,17 @@
 
 ## Elementary Programming
 
+### Primitive Data Types
+
+- `boolean`
+- `byte`
+- `char`
+- `short`
+- `int`
+- `long`
+- `float`
+- `double`
+
 ### Integer Division
 
 - `5 / 2` yields an integer `2`
@@ -535,7 +546,6 @@ public class Student {
 
 - Exceptions are runtime errors that occur while a program is running and the JVM detects an operation that is impossible to carry out
 - An array's length variable is directly exposed (via `.length`) without a getter because it can never be changed after it is initialised, so there is no need for encapsulation. All other length attributes, such as that of a `String`, use getter methods.
-- Primitive data types: `boolean`, `byte`, `char`, `short`, `int`, `long`, `float`, `double`
 - Rounding to 2 decimal places:
 
   ```java
