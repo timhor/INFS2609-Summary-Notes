@@ -379,7 +379,37 @@ public class Student {
 - If a method's parameter type is a superclass (e.g. `Object`), it can accept objects of any of the parameter's subclasses (e.g. `String`)
 - This allows methods to be used generically for a wide range of object arguments
 - The particular implementation of the method that is invoked is determined **dynamically**
-- Explicit casting must be used when casting an object from a superclass to a subclass
+- Explicit casting must be used when assigning a superclass reference variable to a subclass reference
+
+  ```java
+  class Apple extends Fruit {
+      // ...
+  }
+
+  class Fruit {
+      // ...
+  }
+
+  class FruitExample1 {
+      public static void main(String[] args) {
+          Object fruit = new Apple();
+          Object apple = (Apple) fruit; // use a cast of the subclass type
+      }
+  }
+  ```
+
+- However, you cannot just take a parent object and suddenly turn it into a child. The parent object is not an instance of the subclass. If the actual object held by the reference is a superclass object, casting it to a subclass reference will result in a runtime error.
+
+  ```java
+  class FruitExample2 {
+      public static void main(String[] args) {
+          Object fruit = new Fruit();
+          Object apple = (Apple) fruit; // ClassCastException
+      }
+  }
+  ```
+
+- Note: the above example still *compiles* because the type of object being referenced is not known till runtime. The compiler checks the reference type, but the actual object type is checked at runtime.
 
 ### Binding
 
