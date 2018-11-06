@@ -86,8 +86,7 @@
   int j = 2 + 'a'; // (int) 'a' is 97
   System.out.println("j is: " + j); // j is 99
 
-  System.out.println(j + " is the Unicode for
-  character " + (char) j);
+  System.out.println(j + " is the Unicode for character " + (char) j);
   // j is the Unicode for character c
   ```
 
@@ -505,7 +504,7 @@ public class Student {
   ```
 
 - The default `toString()` method returns class name + hashcode
-- Need to use explicit casting to access methods in a subclass of a polymorphic object:
+- Need to use explicit casting to access methods in a subclass object if it has a superclass reference:
 
   ```java
   Animal dog = new Dog();
