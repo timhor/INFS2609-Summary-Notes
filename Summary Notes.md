@@ -93,7 +93,7 @@
 
 ## Loops
 
-- In the case of do-while loop, the semicolon is needed to end the loop:
+- In the case of a `do-while` loop, a semicolon is needed to end the loop:
 
   ```java
   int i = 0;
