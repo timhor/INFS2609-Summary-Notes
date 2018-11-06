@@ -406,7 +406,7 @@ public class Student {
   class FruitExample1 {
       public static void main(String[] args) {
           Object fruit = new Apple();
-          Object apple = (Apple) fruit; // use a cast of the subclass type
+          Apple apple = (Apple) fruit; // use a cast of the subclass type
       }
   }
   ```
@@ -417,7 +417,7 @@ public class Student {
   class FruitExample2 {
       public static void main(String[] args) {
           Object fruit = new Fruit();
-          Object apple = (Apple) fruit; // ClassCastException
+          Apple apple = (Apple) fruit; // ClassCastException
       }
   }
   ```
