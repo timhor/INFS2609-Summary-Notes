@@ -194,13 +194,6 @@
   }
   ```
 
-### Method Overloading
-
-- It is possible to define methods with the same name as long as their signatures are different
-  - Same method name, but different parameter types
-  - You cannot overload methods based on return type or modifiers
-- The compiler determines which method to use based on the method signature
-
 
 ## Arrays
 
@@ -358,6 +351,7 @@ public class Student {
 ### Overriding and Overloading Methods
 
 - **Method overriding**: when a subclass has a method with the same signature as the superclass but a different implementation
+
   ```java
   class A {
       public void p(double i) {
@@ -371,9 +365,11 @@ public class Student {
       }
   }
   ```
-- An instance method can only be overridden if it is accessible, so a private method cannot be overridden. This means if a method defined in a subclass is `private` in its superclass, the two method are completely unrelated.
-- Static methods can be inherited just like instance methods. However, a static method cannot be overridden. If a static method defined in the superclass is redefined in a subclass, the method defined in the superclass is hidden.
-- **Method overloading**: when a class has more than one method with the same name but different parameters
+
+  - An instance method can only be overridden if it is accessible, so a private method cannot be overridden. This means if a method defined in a subclass is `private` in its superclass, the two method are completely unrelated.
+  - Static methods can be inherited just like instance methods. However, a static method cannot be overridden. If a static method defined in the superclass is redefined in a subclass, the method defined in the superclass is hidden.
+- **Method overloading**: when there are multiple methods with the same name but different signatures
+
   ```java
   class A {
       public void p(double i) {
@@ -385,6 +381,10 @@ public class Student {
       }
   }
   ```
+
+  - The compiler determines which method to use based on the method signature
+    - Same method name, but different parameter types
+    - You cannot overload methods based on return type or modifiers
 
 ### Polymorphism
 
