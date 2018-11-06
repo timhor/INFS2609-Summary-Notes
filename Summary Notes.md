@@ -198,7 +198,7 @@
 
 - It is possible to define methods with the same name as long as their signatures are different
   - Same method name, but different parameter types
-  - You cannot overload methods based on return type, or modifiers
+  - You cannot overload methods based on return type or modifiers
 - The compiler determines which method to use based on the method signature
 
 
@@ -295,13 +295,13 @@
 ### Scope of Variables
 
 - **Local variable**: a variable defined inside a method
-- **Scope**: the part of the program where the variable can be referenced
+- **Scope**: the part of the program where a variable can be referenced
 - The scope of both instance and static variables is the entire class; they can be declared anywhere inside a class
 - The scope of a local variable starts from its declaration and continues to the end of the block that contains the variable
 - Java assigns no default value to local variables; code that does not explicitly initialise these variables will not compile
 - If a local variable has the same name as a class' variable, the local variable takes precedence and the class' variable with the same name is hidden
   - The `this` keyword can be used to reference the hidden instance variable, e.g. when a data field name is used as the parameter name in a setter method
-  - `this` references the object invoking an instance method
+  - `this` references the current object
   - Don't need to use `this` if there is no variable with the same name in the current scope – there would be no difference between `x` and `this.x`
 
 ### Class Abstraction and Encapsulation
