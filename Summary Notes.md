@@ -324,7 +324,7 @@
 
 ### Aggregation
 
-- HAS-A relationships representing an ownership relationship between two objects
+- **HAS-A** relationships representing an ownership relationship between two objects
 - Usually represented as a data field in the aggregating class
 
 ```java
@@ -348,7 +348,7 @@ public class Student {
 
 ### Inheritance
 
-- IS-A relationship between objects that share common properties and behaviours
+- **IS-A** relationship between objects that share common properties and behaviours
 - These shared attributes and methods are generalised in a **superclass** that can be shared by other **subclasses**
 - `private` attributes or methods cannot be inherited as they are only visible from within the class itself
 - A superclass' constructor is *not* inherited. It is either invoked implicitly (the no-arg constructor is automatically invoked) or explicitly (using the `super` keyword).
