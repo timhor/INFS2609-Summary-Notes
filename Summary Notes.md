@@ -522,8 +522,11 @@ public class Student {
 | Interface      | Must be constant (`public static final`) | No constructors                                    | Must be `public abstract` |
 
 - While all classes share a single root Object class, there is no single root for interfaces
-- A strong **IS-A** relationship that clearly describes a parent-child relationship should be modelled using classes
+- A strong **IS-A** relationship that clearly describes a parent-child relationship should be modelled using abstract classes
+  - When you have an inheritance relationship where subclasses should inheriting the common attributes and methods from the abstract class
+  - When your abstract methods have anything other than public access (which is the only access type allowed for interfaces
 - A weak **IS-A** relationship ("**IS-KIND-OF**") indicates that an object possesses a certain property and can be modelled using interfaces
+  - When you just have a bunch of different classes that happen to have the same behaviour
 
 
 ## Other
