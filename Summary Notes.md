@@ -186,6 +186,8 @@
 ### Method Overloading
 
 - It is possible to define methods with the same name as long as their signatures are different
+  - Same method name, but different parameter types
+  - You cannot overload methods based on return type, or modifiers
 - The compiler determines which method to use based on the method signature
 
 
