@@ -162,7 +162,7 @@
 ### Benefits of Methods
 
 - Write a method once, reuse it anywhere
-- Information hiding (abstraction) to hide the detailed implementation from the user
+- Hide detailed implementation from the user (abstraction)
 - Reduce complexity and redundant coding (modularise code and improve the quality of the program)
 
 ### Return Value
