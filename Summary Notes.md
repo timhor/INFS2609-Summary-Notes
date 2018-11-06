@@ -87,7 +87,7 @@
   System.out.println("j is: " + j); // j is 99
 
   System.out.println(j + " is the Unicode for character " + (char) j);
-  // j is the Unicode for character c
+  // 99 is the Unicode for character c
   ```
 
 
