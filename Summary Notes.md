@@ -90,6 +90,13 @@
   // 99 is the Unicode for character c
   ```
 
+### Default Values
+
+- `null` for a reference type (this is a special *literal value*)
+- `0` for numeric primitive data types
+- `false` for `boolean` types
+- `'\u0000'` for `char` types (note: this is the null *character*, unrelated to the `null` value)
+
 
 ## Loops
 
@@ -207,6 +214,9 @@
 
   This is because the compiler needs to know the size upfront.
 
+- Default values also apply to array elements – e.g. when creating a new `int` array, all elements are automatically initialised to 0
+  - Can use `Arrays.fill(<arrayname>, <value>)` to explicitly initialise all elements with the same value
+
 ### Copying Arrays
 
 - Using the assignment operator with arrays merely changes the reference
@@ -262,13 +272,6 @@
 - A constructor is a special type of method in a class which is invoked to construct objects from the class (using the `new` operator)
 - If a class is defined without a constructor, a no-arg default constructor with an empty body is implicitly defined in the class
 
-### Default Values of Data Fields
-
-- `null` for a reference type (this is a special *literal value*)
-- `0` for numeric primitive data types
-- `false` for `boolean` types
-- `'\u0000'` for `char` types (note: this is the null *character*, unrelated to the `null` value)
-
 ### Instance vs. Static Variables and Methods
 
 - Instance variables belong to a specific instance of a class
@@ -286,6 +289,7 @@
 - If a local variable has the same name as a class' variable, the local variable takes precedence and the class' variable with the same name is hidden
   - The `this` keyword can be used to reference the hidden instance variable, e.g. when a data field name is used as the parameter name in a setter method
   - `this` references the object invoking an instance method
+  - Don't need to use `this` if there is no variable with the same name in the current scope – there would be no difference between `x` and `this.x`
 
 ### Class Abstraction and Encapsulation
 
@@ -510,3 +514,5 @@ public class Student {
   Animal dog = new Dog();
   ((Dog) dog).woof(); // woof() belongs to the Dog subclass
   ```
+
+- It doesn't matter whether pre-increment (`++i`) or post-increment (`i++`) is used in loops because the result of the expression isn't directly used
