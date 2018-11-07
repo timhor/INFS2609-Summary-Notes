@@ -435,7 +435,7 @@ public class Student {
 ### Binding
 
 - Binding refers to matching a method call to a method body
-- Static binding occurs at compile-time because static methods within a class already exist at the class level
+- Static binding occurs at compile-time because static methods within a class already exist at the class level. `private`, `final`, `static` and overloaded methods all use static binding.
 
   ```java
   public class Dog extends Animal {
@@ -445,7 +445,7 @@ public class Student {
   }
   ```
 
-- Dynamic binding occurs at runtime because objects are only created during runtime
+- Dynamic binding occurs at runtime because objects are only created during runtime. Virtual methods (in Java, methods are virtual by default) and overridden methods use dynamic binding.
 
   ```java
   public class Dog extends Animal {
