@@ -399,7 +399,7 @@ public class Student {
       // ...
   }
 
-  class FruitExample1 {
+  class FruitExample {
       public static void main(String[] args) {
           Fruit fruit = new Apple();
       }
@@ -409,7 +409,7 @@ public class Student {
 - If a method's parameter type is a superclass (e.g. `Object`), it can accept objects of any of the parameter's subclasses (e.g. `String`)
 - This allows methods to be used generically for a wide range of object arguments
 - The particular implementation of the method that is invoked is determined **dynamically**
-- Explicit casting must be used to access methods in a subclass object if it has a superclass reference:
+- Explicit casting must be used to access methods in a subclass object if it has a superclass reference
 
   ```java
   Fruit apple = new Apple();
