@@ -409,26 +409,25 @@ public class Student {
 - If a method's parameter type is a superclass (e.g. `Object`), it can accept objects of any of the parameter's subclasses (e.g. `String`)
 - This allows methods to be used generically for a wide range of object arguments
 - The particular implementation of the method that is invoked is determined **dynamically**
+- Explicit casting must be used to access methods in a subclass object if it has a superclass reference:
+
+  ```java
+  Fruit apple = new Apple();
+  ((Apple) apple).peel(); // peel() belongs to the Apple subclass
+  ```
+
 - Explicit casting must be used when assigning a superclass reference variable to a subclass reference
 
   ```java
-  class FruitExample2 {
-      public static void main(String[] args) {
-          Object fruit = new Apple();
-          Apple apple = (Apple) fruit; // use a cast of the subclass type
-      }
-  }
+  Object fruit = new Apple();
+  Apple apple = (Apple) fruit; // use a cast of the subclass type
   ```
 
 - However, you cannot just take a parent object and suddenly turn it into a child. The parent object is not an instance of the subclass. If the actual object held by the reference is a superclass object, casting it to a subclass reference will result in a runtime error.
 
   ```java
-  class FruitExample3 {
-      public static void main(String[] args) {
-          Object fruit = new Fruit();
-          Apple apple = (Apple) fruit; // ClassCastException
-      }
-  }
+  Object fruit = new Fruit();
+  Apple apple = (Apple) fruit; // ClassCastException
   ```
 
 - Note: the above example still *compiles* because the type of object being referenced is not known till runtime. The compiler checks the reference type, but the actual object type is checked at runtime.
@@ -562,11 +561,4 @@ public class Student {
   ```
 
 - The default `toString()` method returns class name + hashcode
-- Need to use explicit casting to access methods in a subclass object if it has a superclass reference:
-
-  ```java
-  Animal dog = new Dog();
-  ((Dog) dog).woof(); // woof() belongs to the Dog subclass
-  ```
-
 - It doesn't matter whether pre-increment (`++i`) or post-increment (`i++`) is used in loops because the result of the expression isn't directly used
