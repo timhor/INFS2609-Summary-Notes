@@ -462,20 +462,20 @@ public class Student {
 - When overriding `equals()`, the signature must be exactly:
 
   ```java
-  public boolean equals(Object o)
+  public boolean equals(Object obj)
   ```
 
 - Example:
 
   ```java
-  public boolean equals(Object o) {
-      if (o instanceof Circle) {
-          return radius == (Circle) o).radius;
+  public boolean equals(Object obj) {
+      if (obj instanceof Circle) {
+          return radius == ((Circle) obj).radius;
       }
       return false;
   }
 
-###  The `final` modifier
+###  The `final` Modifier
 
 - A `final` data field is a constant
 - A `final` class cannot be extended
@@ -509,7 +509,7 @@ public class Student {
 
 ### Interfaces
 
-- An interface is a *class-like* construct that contains only constants and abstract method
+- An interface is a *class-like* construct that contains only constants and abstract methods
 - In many ways, an interface is similar to an abstract class, but the intent is to specify **common behaviour for objects**
 - Syntax:
 
